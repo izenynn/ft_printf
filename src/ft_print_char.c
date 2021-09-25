@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/25 10:24:26 by dpoveda-          #+#    #+#             */
-/*   Updated: 2021/09/25 10:45:38 by dpoveda-         ###   ########.fr       */
+/*   Created: 2021/09/25 18:59:16 by dpoveda-          #+#    #+#             */
+/*   Updated: 2021/09/25 19:18:21 by dpoveda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-typedef struct s_print
+void	ft_print_char(t_print *tab)
 {
-	va_list args;
-	int wd;
-	int prc;
-	int zero;
-	int pnt;
-	int dash;
-	int tlen;
-	int sign;
-	int is_zero;
-	int perc;
-	int sp;
-}	t_print
+	char	c;
 
-# include <stdarg.h>
-# include <unistd.h>
-
-int	ft_printf(const char *format, ...);
-
-#endif
-
+	c = va_arg(tab->args, int);
+	tab->tlen += write(1, &c, 1);
+}
