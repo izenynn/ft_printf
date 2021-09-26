@@ -6,7 +6,7 @@
 #    By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/25 10:55:50 by dpoveda-          #+#    #+#              #
-#    Updated: 2021/09/25 19:20:23 by dpoveda-         ###   ########.fr        #
+#    Updated: 2021/09/26 13:57:45 by dpoveda-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
+	$(MAKE) fclean -C $(LIBFT_DIR)
 	rm -rf $(LIBFT_NAME)
 	rm -rf $(NAME)
 

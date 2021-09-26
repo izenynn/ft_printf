@@ -9,10 +9,52 @@ int	main()
 	void *p;
 	p = malloc(1);
 
-	n1 = printf("Ptr: %.9d\n", -2147483647 - 1);
-	n2 = ft_printf("Ptr: %.9d\n", -2147483647 - 1);
+	printf("pr:%#4x\n", 9);
+	printf("pr:%4x\n", 9);
+	printf("pr:%#.4x\n", 9);
+	printf("pr:%.4x\n", 9);
+	printf("pr:%#04x\n", 9);
+	printf("pr:%04x\n", 9);
+	printf("pr:%#-4x\n", 9);
+	printf("pr:%-4x\n\n", 9);
 
-	printf("n1: %d\nn2: %d\n", n1, n2);
+	ft_printf("ft:%#4x\n", 9);
+	ft_printf("ft:%4x\n", 9);
+	ft_printf("ft:%#.4x\n", 9);
+	ft_printf("ft:%.4x\n", 9);
+	ft_printf("ft:%#04x\n", 9);
+	ft_printf("ft:%04x\n", 9);
+	ft_printf("ft:%#-4x\n", 9);
+	ft_printf("ft:%-4x\n", 9);
+
+	/*printf("05p  : %05p_\n", 54);
+	printf("01p  : %01p_\n", 54);
+	printf(".5p  : %.5p_\n", 54);
+	printf(".1p  : %.1p_\n", 54);
+	printf("5p   : %5p_\n",  54);
+	printf("1p   : %1p_\n",  54);
+	printf("10.5p: %10.5p_\n", 54);
+	printf("-5p  : %-5p_\n", 54);
+	printf("ptf  :_%-11p_%-12p_\n", -2147483647 - 1, 2147483647);
+	printf("ptf  :%-2p_\n", 1);
+	ft_printf("---------------------------------\n");
+	ft_printf("05p  : %05p_\n", 54);
+	ft_printf("01p  : %01p_\n", 54);
+	ft_printf(".5p  : %.5p_\n", 54);
+	ft_printf(".1p  : %.1p_\n", 54);
+	ft_printf("5p   : %5p_\n",  54);
+	ft_printf("1p   : %1p_\n",  54);
+	ft_printf("10.5p: %10.5p_\n", 54);
+	ft_printf("-5p  : %-5p_\n", 54);
+	ft_printf("ft_  :_%-11p_%-12p_\n", -2147483647 - 1, 2147483647);
+	ft_printf("ptf  :%-2p_\n", 1);*/
+
+	/*n1 = printf("printf: %.40p", p);
+	printf("\n");
+	n2 = ft_printf("ft_ptf: %.40p", p);
+	printf("\n");
+
+	printf("n1: %d\nn2: %d\n", n1, n2);*/
 
 	/*printf("PRINTF\n");
 	printf("+: %.s%c\n", "hello", 'a');

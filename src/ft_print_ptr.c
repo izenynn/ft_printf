@@ -6,20 +6,72 @@
 /*   By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 19:02:19 by dpoveda-          #+#    #+#             */
-/*   Updated: 2021/09/25 19:03:07 by dpoveda-         ###   ########.fr       */
+/*   Updated: 2021/09/26 12:58:49 by dpoveda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	ft_get_print_len(t_print *tab, int len)
+{
+	int	print_len;
+
+	if (tab->dot)
+	{
+		if (tab->dot > len)
+			print_len = tab->dot - 1;
+		else
+			print_len = len;
+	}
+	else if (tab->zero)
+	{
+		if (tab->wd > len)
+			print_len = tab->wd - 2;
+		else
+			print_len = len - 2;
+	}
+	else
+		print_len = len;
+	return (print_len);
+}
+
+static void	ft_handle_left_align(t_print *tab, int print_len)
+{
+	if (tab->dash)
+		return ;
+	tab->wd -= print_len + 2;
+	while (tab->wd-- > 0)
+		tab->tlen += write(1, " ", 1);
+}
+
+static void	ft_handle_zeros(t_print *tab, unsigned long n, int print_len)
+{
+	print_len -= ft_ulonghexlen(n);
+	while (print_len-- > 0)
+		tab->tlen += write(1, "0", 1);
+}
+
+static void	ft_handle_right_align(t_print *tab, int print_len)
+{
+	if (!tab->dash)
+		return ;
+	tab->wd -= print_len + 2;
+	while (tab->wd-- > 0)
+		tab->tlen += write(1, " ", 1);
+}
 
 void	ft_print_ptr(t_print *tab)
 {
 	unsigned long	n;
 	unsigned long	pow;
 	char			c;
+	int				print_len;
 
-	tab->tlen += write(1, "0x", 2);
 	n = va_arg(tab->args, unsigned long);
+	print_len = ft_get_print_len(tab, ft_ulonghexlen(n));
+	ft_handle_left_align(tab, print_len);
+	tab->tlen += write(1, "0x", 2);
+	ft_handle_zeros(tab, n, print_len);
 	pow = 1;
 	while (n / pow / 16)
 		pow *= 16;
@@ -34,4 +86,5 @@ void	ft_print_ptr(t_print *tab)
 		n %= pow;
 		pow /= 16;
 	}
+	ft_handle_right_align(tab, print_len);
 }

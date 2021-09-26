@@ -6,7 +6,7 @@
 /*   By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 10:19:49 by dpoveda-          #+#    #+#             */
-/*   Updated: 2021/09/25 20:41:04 by dpoveda-         ###   ########.fr       */
+/*   Updated: 2021/09/26 11:44:01 by dpoveda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_eval_format(t_print *tab, const char *format, int i)
 		ft_print_uint(tab);
 	else if (format[i] == 'x' || format[i] == 'X')
 		ft_print_hex(tab, format[i]);
-	else
+	else if (format[i] == '%')
 		tab->tlen += write(1, "%", 1);
 	ft_clear_flags_tab(tab);
 	return (i);
@@ -75,9 +75,9 @@ int	ft_printf(const char *format, ...)
 	i = -1;
 	while (format[++i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 			i = ft_eval_flags(tab, format, i + 1);
-		else
+		else if (format[i] != '%')
 			ret += write(1, &format[i], 1);
 	}
 	va_end(tab->args);

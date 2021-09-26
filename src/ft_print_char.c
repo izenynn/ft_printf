@@ -6,16 +6,39 @@
 /*   By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 18:59:16 by dpoveda-          #+#    #+#             */
-/*   Updated: 2021/09/25 19:18:21 by dpoveda-         ###   ########.fr       */
+/*   Updated: 2021/09/26 11:05:31 by dpoveda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void	ft_handle_left_align(t_print *tab)
+{
+	tab->wd--;
+	while (tab->wd-- > 0)
+	{
+		if (tab->zero)
+			tab->tlen += write(1, "0", 1);
+		else
+			tab->tlen += write(1, " ", 1);
+	}
+}
+
+static void	ft_handle_right_align(t_print *tab)
+{
+	tab->wd--;
+	while (tab->wd-- > 0)
+		tab->tlen += write(1, " ", 1);
+}
 
 void	ft_print_char(t_print *tab)
 {
 	char	c;
 
 	c = va_arg(tab->args, int);
+	if ((tab->zero || tab->wd) && !tab->dash)
+		ft_handle_left_align(tab);
 	tab->tlen += write(1, &c, 1);
+	if (tab->wd && tab->dash)
+		ft_handle_right_align(tab);
 }

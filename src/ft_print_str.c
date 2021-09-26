@@ -6,7 +6,7 @@
 /*   By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 19:00:12 by dpoveda-          #+#    #+#             */
-/*   Updated: 2021/09/25 20:46:22 by dpoveda-         ###   ########.fr       */
+/*   Updated: 2021/09/26 11:21:47 by dpoveda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static void	ft_handle_right_align(t_print *tab, size_t print_len)
 	while (tab->wd-- > 0)
 		tab->tlen += write(1, " ", 1);
 }
-
 
 void	ft_print_str(t_print *tab)
 {
