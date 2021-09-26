@@ -6,7 +6,7 @@
 #    By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/25 10:55:50 by dpoveda-          #+#    #+#              #
-#    Updated: 2021/09/26 13:57:45 by dpoveda-         ###   ########.fr        #
+#    Updated: 2021/09/26 14:38:59 by dpoveda-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,9 @@ SRC_DIR = src
 
 OBJ_DIR = obj
 
-SRC_FILES =		ft_printf.c		ft_tab_utils.c		ft_print_char.c		\
-				ft_print_str.c	ft_print_int.c		ft_print_uint.c		\
-				ft_print_ptr.c	ft_print_hex.c
+SRC_FILES =			ft_printf.c		ft_tab_utils.c		ft_print_char.c		\
+					ft_print_str.c	ft_print_int.c		ft_print_uint.c		\
+					ft_print_ptr.c	ft_print_hex.c
 
 OBJ_FILES = $(SRC_FILES:%.c=%.o)
 
@@ -54,9 +54,7 @@ $(LIBFT_NAME): $(LIBFT)
 	cp $(LIBFT) .
 
 $(LIBFT):
-	$(MAKE) all -C $(LIBFT_DIR)
-
-bonus: # QUE PONGO AQUIN NO DICE DE SEPRAR LOS BONUSES AAAAAAAAAAAHHHHH
+	$(MAKE) all -sC $(LIBFT_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -65,10 +63,10 @@ $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
 clean:
+	$(MAKE) clean -sC $(LIBFT_DIR)
 	rm -rf $(OBJ_DIR)
-
 fclean: clean
-	$(MAKE) fclean -C $(LIBFT_DIR)
+	$(MAKE) fclean -sC $(LIBFT_DIR)
 	rm -rf $(LIBFT_NAME)
 	rm -rf $(NAME)
 
