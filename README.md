@@ -2,7 +2,7 @@
 
 ## Info
 
-A simple implementation of C printf function to add it in libft and use it in future projects.
+A simple implementation of C printf function to add it to the libft and use it in future projects.
 
 ## Flags
 
