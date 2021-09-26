@@ -6,7 +6,7 @@
 #    By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/25 10:55:50 by dpoveda-          #+#    #+#              #
-#    Updated: 2021/09/26 14:38:59 by dpoveda-         ###   ########.fr        #
+#    Updated: 2021/09/26 15:18:45 by dpoveda-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,11 +47,9 @@ LIBFT = $(addprefix $(LIBFT_DIR)/, $(LIBFT_FILES))
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT_NAME)
+	cp $(LIBFT) .
 	cp $(LIBFT_NAME) $(NAME)
 	ar $(ARFLAGS) $@ $(OBJ)
-
-$(LIBFT_NAME): $(LIBFT)
-	cp $(LIBFT) .
 
 $(LIBFT):
 	$(MAKE) all -sC $(LIBFT_DIR)
@@ -64,10 +62,11 @@ $(OBJ_DIR):
 
 clean:
 	$(MAKE) clean -sC $(LIBFT_DIR)
+	rm -rf $(LIBFT_NAME)
 	rm -rf $(OBJ_DIR)
+
 fclean: clean
 	$(MAKE) fclean -sC $(LIBFT_DIR)
-	rm -rf $(LIBFT_NAME)
 	rm -rf $(NAME)
 
 re: fclean all
