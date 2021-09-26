@@ -2,7 +2,7 @@
 
 ## Info
 
-A simple implementation of C printf function to add it to libft and use it in future projects.
+A simple implementation of C printf function to implement it in libft and use it in future projects.
 
 ## Flags
 
@@ -24,4 +24,4 @@ A simple implementation of C printf function to add it to libft and use it in fu
 
 ## P.S.
 
-This project is about 175 hours, and I do it in less than a day becouse I accidentally set a deadline, so please be gentile with my code :")
+This project is estimated that it takes about 175 hours, and I do it in less than a day because I accidentally set a deadline, so please be gentile with my code :")
