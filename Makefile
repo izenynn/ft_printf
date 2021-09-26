@@ -6,7 +6,7 @@
 #    By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/25 10:55:50 by dpoveda-          #+#    #+#              #
-#    Updated: 2021/09/26 15:18:45 by dpoveda-         ###   ########.fr        #
+#    Updated: 2021/09/26 17:07:33 by dpoveda-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,11 +42,11 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 
 LIBFT = $(addprefix $(LIBFT_DIR)/, $(LIBFT_FILES))
 
-.PHONY: all bonus clean fclean rm
+.PHONY: all bonus clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT_NAME)
+$(NAME): $(OBJ) $(LIBFT)
 	cp $(LIBFT) .
 	cp $(LIBFT_NAME) $(NAME)
 	ar $(ARFLAGS) $@ $(OBJ)
