@@ -29,3 +29,7 @@ A simple implementation of C printf function to add it to the libft and use it i
 ## P.S.
 
 This project is estimated that it takes about 175 hours, and I do it in less than a day because I accidentally set a deadline, so please be gentile with my code :")
+
+##
+[![forthebadge](https://forthebadge.com/images/badges/made-with-c.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)
