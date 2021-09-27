@@ -6,7 +6,7 @@
 #    By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/25 10:55:50 by dpoveda-          #+#    #+#              #
-#    Updated: 2021/09/26 17:07:33 by dpoveda-         ###   ########.fr        #
+#    Updated: 2021/09/27 11:55:52 by dpoveda-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,8 @@ $(NAME): $(OBJ) $(LIBFT)
 	cp $(LIBFT) .
 	cp $(LIBFT_NAME) $(NAME)
 	ar $(ARFLAGS) $@ $(OBJ)
+
+bonus: $(NAME)
 
 $(LIBFT):
 	$(MAKE) all -sC $(LIBFT_DIR)
