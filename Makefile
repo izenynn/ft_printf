@@ -6,7 +6,7 @@
 #    By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/25 10:55:50 by dpoveda-          #+#    #+#              #
-#    Updated: 2021/09/27 11:55:52 by dpoveda-         ###   ########.fr        #
+#    Updated: 2021/09/27 11:59:09 by dpoveda-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ LIBFT = $(addprefix $(LIBFT_DIR)/, $(LIBFT_FILES))
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
+$(NAME): $(LIBFT) $(OBJ)
 	cp $(LIBFT) .
 	cp $(LIBFT_NAME) $(NAME)
 	ar $(ARFLAGS) $@ $(OBJ)
