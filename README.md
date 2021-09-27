@@ -4,6 +4,10 @@
 
 A simple implementation of C printf function to add it to the libft and use it in future projects.
 
+- Status: finished
+- Result: 125%
+- Observations: (null)
+
 ## Flags
 
 - `%c` print a single character.
