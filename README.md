@@ -26,6 +26,12 @@ A simple implementation of C printf function to add it to the libft and use it i
 - `(space)` if no sign is going to be written, a blank space is inserted before the value.
 - `+` forces to preceed the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign.
 
+## How to use
+
+If you want to try it yourself, check my libft repo, libft is a lib I made by myself and contains some useful C functions to use it in 42 projects, including ft_printf.
+I explain how to use it in the README.md of the repo.
+[Link to libft repo](https://github.com/izenynn/libft)
+
 ## P.S.
 
 This project is estimated that it takes about 175 hours, and I do it in less than a day because I accidentally set a deadline, so please be gentile with my code :")
