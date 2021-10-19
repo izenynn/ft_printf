@@ -29,7 +29,9 @@ A simple implementation of C printf function to add it to the libft and use it i
 ## How to use
 
 If you want to try it yourself, check my libft repo, libft is a lib I made by myself and contains some useful C functions to use it in 42 projects, including ft_printf.
+
 I explain how to use it in the README.md of the repo.
+
 [Link to libft repo](https://github.com/izenynn/libft)
 
 ## P.S.
